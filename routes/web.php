@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+// CREATE
+Route::get('/input-contact', [ContactController::class, 'input'])->name('input-contact');
+Route::post('/create', [ContactController::class, 'store']);
+
+// UPDATE
+Route::get('/edit-contact/{id}', [ContactController::class, 'edit']);
+Route::patch('/update/{id}', [ContactController::class, 'update']);
+
+// DELETE
+Route::delete('/delete/{id}', [ContactController::class, 'destroy']);
