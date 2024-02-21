@@ -183,7 +183,7 @@
     <script>
         $(document).ready(function() {
             $('#contactsTable').DataTable({
-                "pageLength": 2,
+                "pageLength": 7,
                 "lengthChange": false
             })
         })

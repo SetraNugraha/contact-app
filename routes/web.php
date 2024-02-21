@@ -26,6 +26,3 @@ Route::post('/create', [ContactController::class, 'store']);
 // UPDATE
 Route::get('/edit-contact/{id}', [ContactController::class, 'edit']);
 Route::patch('/update/{id}', [ContactController::class, 'update']);
-
-// DELETE
-Route::delete('/delete/{id}', [ContactController::class, 'destroy']);

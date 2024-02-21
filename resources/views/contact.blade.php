@@ -45,15 +45,9 @@
                                 <td class="text-center">{{ $contact->phone }}</td>
                                 <td class="text-center">{{ $contact->address }}</td>
                                 <td class="text-center">{{ $contact->created_at->format('d-m-Y') }}</td>
-                                <td class="text-center row">
+                                <td class="text-center">
                                     <a href='/edit-contact/{{ $contact->id }}' class="btn btn-warning"><i
                                             class="bi bi-pencil-square"></i></a>
-                                    <form action="/delete/{{ $contact->id }}" method="POST" type="button">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button onclick="return confirm('Delete Contact {{ $contact->name }} ?')"
-                                            class="btn btn-danger ml-2"><i class="bi bi-trash3"></i></button>
-                                    </form>
                                 </td>
                             </tr>
                         @endforeach

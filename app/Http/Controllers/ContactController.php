@@ -81,15 +81,4 @@ class ContactController extends Controller
             return redirect('contact');
         }
     }
-
-    public function destroy($id)
-    {
-        $contact = Contacts::findOrFail($id);
-
-        $contact->delete();
-        Session::flash('status', 'success');
-        Session::flash('message', 'Delete Contact Successfuly');
-
-        return redirect('contact');
-    }
 }
